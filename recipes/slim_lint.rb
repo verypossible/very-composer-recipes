@@ -1,4 +1,4 @@
-REPO = 'https://raw.githubusercontent.com/spartansystems/spartan-composer-recipes/master/configs'.freeze
+REPO = 'https://raw.githubusercontent.com/spartansystems/spartan-composer-recipes/master/configs/'.freeze
 gem 'slim_lint'
 
 after_bundle do
