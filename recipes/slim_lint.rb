@@ -11,6 +11,6 @@ name: slim-lint
 description: "Adding slim linter to your application"
 
 category: other
-requires: [setup]
-run_after: [setup, extras]
+requires: [spartan_setup]
+run_after: [spartan_setup, extras]
 args: -T

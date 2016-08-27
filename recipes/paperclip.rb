@@ -27,5 +27,5 @@ name: paperclip
 description: "Add paperclip to your application"
 
 category: other
-requires: [setup]
-run_after: [setup]
+requires: [spartan_setup]
+run_after: [spartan_setup]

@@ -1,0 +1,25 @@
+recipes:
+- slim_lint
+- paperclip
+
+prefs:
+  :dev_webserver: puma
+  :prod_webserver: same
+  :database: postgresql
+  :templates: slim
+  :tests: rspec
+  :integration: cucumber
+  :fixtures: factory_girl
+  :frontend: none
+  :form_builder: none
+  :email: gmail
+  :authentication: devise
+  :devise_modules: default
+  :authorization: none
+
+gems:
+- kaminari
+
+args:
+  :skip_test_unit: yes
+  :skip_active_record: false

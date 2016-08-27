@@ -6,5 +6,5 @@ name: awesome_print
 description: "Add awesome_print to your application"
 
 category: other
-requires: [setup]
-run_after: [setup]
+requires: [spartan_setup]
+run_after: [spartan_setup]
