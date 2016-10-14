@@ -7,6 +7,6 @@ end
 
 __END__
 name: dotenv
-description: "Add rollbar to your application"
+description: "Add dotenv to your application"
 
 category: configuration
