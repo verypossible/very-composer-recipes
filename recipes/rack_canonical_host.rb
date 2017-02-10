@@ -2,8 +2,8 @@ gem "rack-canonical-host"
 
 middleware_setup = <<-TEXT
 
-  config.application_host = ENV.fetch('APPLICATION_HOST')
-  config.middleware.insert_after 0, Rack::CanonicalHost, config.application_host if Rails.env.production?
+    config.application_host = ENV.fetch('APPLICATION_HOST')
+    config.middleware.insert_after 0, Rack::CanonicalHost, config.application_host if Rails.env.production?
 TEXT
 
 inject_into_file(
@@ -42,3 +42,5 @@ name: rack-canonical-host
 description: "Add rack-canonical-host to your application"
 
 category: other
+requires: [dotenv]
+run_after: [dotenv]
