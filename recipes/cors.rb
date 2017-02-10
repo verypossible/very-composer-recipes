@@ -1,18 +1,23 @@
 REPO = "https://raw.githubusercontent.com/spartansystems/spartan-composer-recipes/master/files/".freeze
-gem "bullet", group: :development
+gem 'rack-cors'
 
 after_bundle do
   copy_from_repo "config/initializers/bullet.rb", repo: REPO
 
   append_to_file ".env.example" do
-    "BULLET_SHOW_ALERT=true\nBULLET_SHOW_FOOTER=true\n"
+    "CORS_ORIGINS=localhost\n"
+  end
+
+  append_to_file ".env" do
+    "CORS_ORIGINS=localhost\n"
   end
 end
+
 __END__
 
-name: bullet
-description: "Add bullet to your application"
+name: 'cors'
+description: 'Configure Rack CORS gem so Devise Auth Token works'
 
-category: other
+category: api
 requires: [dotenv]
 run_after: [dotenv]
