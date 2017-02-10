@@ -1,8 +1,8 @@
 REPO = "https://raw.githubusercontent.com/spartansystems/spartan-composer-recipes/master/files/".freeze
 gem 'rack-cors'
 
-after_bundle do
-  copy_from_repo "config/initializers/bullet.rb", repo: REPO
+stage_two do
+  copy_from_repo "config/initializers/cors.rb", repo: REPO
 
   append_to_file ".env.example" do
     "CORS_ORIGINS=localhost\n"
