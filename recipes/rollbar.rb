@@ -1,7 +1,7 @@
 REPO = "https://raw.githubusercontent.com/spartansystems/spartan-composer-recipes/master/files/".freeze
 gem "rollbar"
 
-after_bundle do
+stage_two do
   copy_from_repo "config/initializers/rollbar.rb", repo: REPO
   copy_from_repo "vendor/assets/javascripts/rollbar.js.erb", repo: REPO
 
