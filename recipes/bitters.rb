@@ -1,8 +1,8 @@
-gem 'bitters'
+gem "bitters"
 
 stage_two do
-  run 'cd app/assets/stylesheets/ && bundle exec bitters install'
-  insert_into_file 'app/assets/stylesheets/application.scss',
+  run "cd app/assets/stylesheets/ && bundle exec bitters install"
+  insert_into_file "app/assets/stylesheets/application.scss",
                    "@import \"base/base\";\n",
                    after: "@import \"bourbon\";\n"
 end
