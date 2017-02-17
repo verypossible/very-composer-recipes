@@ -1,5 +1,5 @@
 REPO = "https://raw.githubusercontent.com/spartansystems/spartan-composer-recipes/master/files/".freeze
-gem "bullet", group: :development
+gem "bullet"
 
 stage_two do
   copy_from_repo "config/initializers/bullet.rb", repo: REPO
