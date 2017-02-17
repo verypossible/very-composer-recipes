@@ -1,5 +1,5 @@
 require "rollbar/rails"
-require "rack/timeout/rollbar"
+require "rack/timeout/rollbar" if Rails.env.production?
 Rollbar.configure do |config|
   if ENV["ROLLBAR_SERVER_ACCESS_TOKEN"]
     config.js_enabled = false
