@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# stop on any failure
+set -e
+
+RESET='\e[0;0m'
+BLUE='\e[0;34m'
+
+log() {
+  printf "$BLUE$1$RESET\n"
+}
+
+if [[ -z "$GLOBAL_POSTGRES" ]]; then
+  if [[ ! -d db/postgres ]]; then
+    log 'Initialize Posgres'
+    mkdir -p db/postgres
+    initdb db/postgres -U postgres
+  fi
+
+  log 'Start Postgres'
+
+  # Make sure it's not already running.
+  if [[ -n "$(find db/postgres -name postmaster.pid)" ]]; then
+    pg_ctl -D db/postgres stop
+  fi
+
+  pg_ctl -D db/postgres start
+fi
+
+log 'Running bin/setup'
+bin/setup
+
+if [[ -z "$GLOBAL_POSTGRES" ]]; then
+  log 'Stop Postgres'
+  pg_ctl -D db/postgres stop
+fi
+
+log 'You can now run `bin/up` to start developing!!!'

@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# stop on any failure
+set -e
+
+RESET='\e[0;0m'
+BLUE='\e[0;34m'
+
+log() {
+  printf "$BLUE$1$RESET\n"
+}
+
+bin/down
+
+if [[ -z "$GLOBAL_POSTGRES" ]]; then
+  echo "Start Postgres"
+  pg_ctl start -D db/postgres -l db/postgres.log || exit 1
+fi
+
+bin/rails s
