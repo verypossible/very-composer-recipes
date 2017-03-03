@@ -1,5 +1,5 @@
-gem 'aws-sdk', '< 2.0'
-gem 'paperclip', '~> 5.0.0'
+gem "aws-sdk", "< 2.0"
+gem "paperclip", "~> 5.0.0"
 
 paperclip_config_start = <<-TEXT
 
@@ -24,17 +24,17 @@ paperclip_config_cloudfront = <<-TEXT
       path: '/:class/:attachment/:id_partition/:style/:filename',
 TEXT
 
-paperclip_config_end = '    }'
+paperclip_config_end = "    }"
 
 paperclip_config = paperclip_config_start
-paperclip_config += paperclip_config_cloudfront if config['cloudfront']
+paperclip_config += paperclip_config_cloudfront if config["cloudfront"]
 paperclip_config += paperclip_config_defaults
 paperclip_config += paperclip_config_end
 
 inject_into_file(
-  'config/application.rb',
+  "config/application.rb",
   paperclip_config,
-  after: 'class Application < Rails::Application'
+  after: "class Application < Rails::Application"
 )
 
 __END__

@@ -1,5 +1,5 @@
 REPO = "https://raw.githubusercontent.com/spartansystems/spartan-composer-recipes/master/files/".freeze
-gem 'rack-cors'
+gem "rack-cors"
 
 stage_two do
   copy_from_repo "config/initializers/cors.rb", repo: REPO

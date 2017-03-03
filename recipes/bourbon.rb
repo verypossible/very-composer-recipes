@@ -1,7 +1,7 @@
-gem 'bourbon'
+gem "bourbon"
 
 stage_two do
-  prepend_to_file 'app/assets/stylesheets/application.scss',
+  prepend_to_file "app/assets/stylesheets/application.scss",
                   "@import \"bourbon\";\n"
 end
 __END__

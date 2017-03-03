@@ -1,7 +1,7 @@
-gem 'devise_token_auth'
+gem "devise_token_auth"
 
 stage_three do
-  run 'bin/rails g devise_token_auth:install User api/auth'
+  run "bin/rails g devise_token_auth:install User api/auth"
   inject_into_file(
     "config/routes.rb",
     ", skip: [:omniauth_callbacks]",
@@ -9,9 +9,10 @@ stage_three do
   )
   gsub_file(
     "app/models/user.rb",
-    ', :omniauthable',
-    '')
-  run 'bin/rails db:migrate'
+    ", :omniauthable",
+    ""
+  )
+  run "bin/rails db:migrate"
 end
 
 __END__
