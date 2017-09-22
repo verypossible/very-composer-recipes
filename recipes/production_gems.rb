@@ -8,7 +8,7 @@ end
 __END__
 
 name: production_gems
-description: "Add Spartan's recommended production gems"
+description: "Add Very's recommended production gems"
 
 category: other
 requires: [rack_canonical_host]

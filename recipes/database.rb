@@ -1,4 +1,4 @@
-REPO = "https://raw.githubusercontent.com/spartansystems/spartan-composer-recipes/master/files/".freeze
+REPO = "https://raw.githubusercontent.com/verypossible/very-composer-recipes/master/files/".freeze
 gem "pg"
 
 inject_into_file(
@@ -13,6 +13,6 @@ end
 __END__
 
 name: database
-description: "Add custom Spartan Database configuration"
+description: "Add custom Very Database configuration"
 
 category: configuration

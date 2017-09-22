@@ -1,4 +1,4 @@
-REPO = "https://raw.githubusercontent.com/spartansystems/spartan-composer-recipes/master/files/".freeze
+REPO = "https://raw.githubusercontent.com/verypossible/very-composer-recipes/master/files/".freeze
 gem "rack-cors"
 
 stage_two do
