@@ -1,5 +1,5 @@
-REPO = "https://raw.githubusercontent.com/spartansystems/spartan-composer-recipes/master/files/".freeze
-gem "dotenv-rails", group: [:development, :test]
+REPO = "https://raw.githubusercontent.com/verypossible/very-composer-recipes/master/files/".freeze
+gem "dotenv-rails", group: %i(development test)
 
 stage_two do
   copy_from_repo ".env.example", repo: REPO

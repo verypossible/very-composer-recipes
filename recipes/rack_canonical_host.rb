@@ -19,7 +19,7 @@ uncomment_lines(
 
 inject_into_file(
   "config/environments/production.rb",
-  "\n config.ssl_options = { host: config.application_host }",
+  "\n  config.ssl_options = { redirect: { host: config.application_host } }",
   after: "config.force_ssl = true"
 )
 

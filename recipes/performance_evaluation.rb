@@ -1,7 +1,7 @@
 __END__
 
 name: performance_evaluation
-description: "Add Spartan's recommended performance evaluation gems to
+description: "Add Very's recommended performance evaluation gems to
   your application"
 
 category: other

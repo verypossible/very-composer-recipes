@@ -1,5 +1,5 @@
-remove_file 'app/assets/stylesheets/application.css'
-create_file 'app/assets/stylesheets/application.scss'
+remove_file "app/assets/stylesheets/application.css"
+create_file "app/assets/stylesheets/application.scss"
 
 __END__
 

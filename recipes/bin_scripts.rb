@@ -1,4 +1,4 @@
-REPO = "https://raw.githubusercontent.com/spartansystems/spartan-composer-recipes/master/files/".freeze
+REPO = "https://raw.githubusercontent.com/verypossible/very-composer-recipes/master/files/".freeze
 
 stage_two do
   %w(bin/init bin/up bin/down).each do |script|
@@ -9,6 +9,6 @@ end
 __END__
 
 name: bin_scripts
-description: "Add custom Spartan bin scripts for initializing and running the app"
+description: "Add custom Very bin scripts for initializing and running the app"
 
 category: initialize

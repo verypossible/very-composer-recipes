@@ -252,8 +252,9 @@ say_wizard("\033[1m\033[36m" + "|_|  \\_\\__,_|_|_|___/_/    \\_\\ .__/| .__/|__
 say_wizard("\033[1m\033[36m" + "                             \| \|   \| \|" + "\033[0m")
 say_wizard("\033[1m\033[36m" + "                             \| \|   \| \|" + "\033[0m")
 say_wizard("\033[1m\033[36m" + '' + "\033[0m")
-say_wizard("\033[1m\033[36m" + "If you like Rails Composer, will you support it?" + "\033[0m")
-say_wizard("\033[1m\033[36m" + "You can help by purchasing our tutorials." + "\033[0m")
+say_wizard("\033[1m\033[36m" + "Support the KICKSTARTER for Rails Composer" + "\033[0m")
+say_wizard("\033[1m\033[36m" + "please act before June 4, 2017" + "\033[0m")
+say_wizard("\033[1m\033[36m" + "https://www.kickstarter.com/projects/909377477/rails-composer-for-rails-51" + "\033[0m")
 say_wizard("Need help? Ask on Stack Overflow with the tag \'railsapps.\'")
 say_wizard("Your new application will contain diagnostics in its README file.")
 
@@ -299,7 +300,7 @@ say_recipe 'bin_scripts'
 @configs[@current_recipe] = config
 # >------------------------- recipes/bin_scripts.rb --------------------------start<
 
-REPO = "https://raw.githubusercontent.com/spartansystems/spartan-composer-recipes/master/files/".freeze
+REPO = "https://raw.githubusercontent.com/verypossible/very-composer-recipes/master/files/".freeze
 
 stage_two do
   %w(bin/init bin/up bin/down).each do |script|
@@ -318,7 +319,7 @@ say_recipe 'database'
 @configs[@current_recipe] = config
 # >--------------------------- recipes/database.rb ---------------------------start<
 
-REPO = "https://raw.githubusercontent.com/spartansystems/spartan-composer-recipes/master/files/".freeze
+REPO = "https://raw.githubusercontent.com/verypossible/very-composer-recipes/master/files/".freeze
 gem "pg"
 
 inject_into_file(
@@ -368,7 +369,7 @@ say_recipe 'procfile'
 @configs[@current_recipe] = config
 # >--------------------------- recipes/procfile.rb ---------------------------start<
 
-REPO = "https://raw.githubusercontent.com/spartansystems/spartan-composer-recipes/master/files/".freeze
+REPO = "https://raw.githubusercontent.com/verypossible/very-composer-recipes/master/files/".freeze
 
 stage_two do
   copy_from_repo "Procfile", repo: REPO
@@ -413,7 +414,7 @@ say_recipe 'puma'
 @configs[@current_recipe] = config
 # >----------------------------- recipes/puma.rb -----------------------------start<
 
-REPO = "https://raw.githubusercontent.com/spartansystems/spartan-composer-recipes/master/files/".freeze
+REPO = "https://raw.githubusercontent.com/verypossible/very-composer-recipes/master/files/".freeze
 
 stage_two do
   copy_from_repo "config/puma.rb", repo: REPO
@@ -429,8 +430,8 @@ say_recipe 'dotenv'
 @configs[@current_recipe] = config
 # >---------------------------- recipes/dotenv.rb ----------------------------start<
 
-REPO = "https://raw.githubusercontent.com/spartansystems/spartan-composer-recipes/master/files/".freeze
-gem "dotenv-rails", group: [:development, :test]
+REPO = "https://raw.githubusercontent.com/verypossible/very-composer-recipes/master/files/".freeze
+gem "dotenv-rails", group: %i(development test)
 
 stage_two do
   copy_from_repo ".env.example", repo: REPO
@@ -504,7 +505,7 @@ uncomment_lines(
 
 inject_into_file(
   "config/environments/production.rb",
-  "\n config.ssl_options = { host: config.application_host }",
+  "\n  config.ssl_options = { redirect: { host: config.application_host } }",
   after: "config.force_ssl = true"
 )
 
@@ -531,8 +532,8 @@ say_recipe 'sass_setup'
 @configs[@current_recipe] = config
 # >-------------------------- recipes/sass_setup.rb --------------------------start<
 
-remove_file 'app/assets/stylesheets/application.css'
-create_file 'app/assets/stylesheets/application.scss'
+remove_file "app/assets/stylesheets/application.css"
+create_file "app/assets/stylesheets/application.scss"
 # >-------------------------- recipes/sass_setup.rb --------------------------end<
 # >-------------------------- templates/recipe.erb ---------------------------end<
 
@@ -544,7 +545,7 @@ say_recipe 'bullet'
 @configs[@current_recipe] = config
 # >---------------------------- recipes/bullet.rb ----------------------------start<
 
-REPO = "https://raw.githubusercontent.com/spartansystems/spartan-composer-recipes/master/files/".freeze
+REPO = "https://raw.githubusercontent.com/verypossible/very-composer-recipes/master/files/".freeze
 gem "bullet"
 
 stage_two do
@@ -565,7 +566,7 @@ say_recipe 'cors'
 @configs[@current_recipe] = config
 # >----------------------------- recipes/cors.rb -----------------------------start<
 
-REPO = "https://raw.githubusercontent.com/spartansystems/spartan-composer-recipes/master/files/".freeze
+REPO = "https://raw.githubusercontent.com/verypossible/very-composer-recipes/master/files/".freeze
 gem "rack-cors"
 
 stage_two do
@@ -590,7 +591,7 @@ say_recipe 'rollbar'
 @configs[@current_recipe] = config
 # >--------------------------- recipes/rollbar.rb ----------------------------start<
 
-REPO = "https://raw.githubusercontent.com/spartansystems/spartan-composer-recipes/master/files/".freeze
+REPO = "https://raw.githubusercontent.com/verypossible/very-composer-recipes/master/files/".freeze
 gem "rollbar"
 
 stage_two do
