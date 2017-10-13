@@ -21,6 +21,10 @@
 ## To build the API template
 1. Run this command to generate your template file `rails_apps_composer template templates/very-api.rb -l recipes/ --defaults=./defaults/very-api-defaults.yml`
 
+## Available templates
+* very-api
+* very-graphql-api
+
 ## To deploy demo API to Heroku (Currently must be done manually)
 1. If you already have a demo app linked to heroku then skip to step 8.
 2. Create a new app following the `To build an API app from a template` instructions

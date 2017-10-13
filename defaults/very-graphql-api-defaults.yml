@@ -1,0 +1,17 @@
+recipes:
+- bin_scripts
+- bullet
+- cors
+- database
+- devise_token_auth
+- graphql
+- procfile
+- performance_evaluation
+- production_gems
+- puma
+- rollbar
+- spring_commands_rspec
+
+args:
+  :skip_test_unit: false
+  :skip_active_record: false
